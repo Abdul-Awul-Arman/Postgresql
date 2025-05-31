@@ -27,6 +27,11 @@ SELECT extract(YEAR from '2024-02-4'::date);
 
 SELECT 'y'::BOOLEAN;
 
+SELECT * FROM students;
 
 
+SELECT country ,avg(age) FROM students GROUP BY country;
+SELECT country ,avg(age) FROM students GROUP BY country HAVING avg(age)>=21;
+
+SELECT extract(YEAR FROM dob) as Birth_year,count(*) from students GROUP BY Birth_year;
   
