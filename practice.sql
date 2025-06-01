@@ -62,7 +62,7 @@ SELECT * from departments;
 
 SELECT employee_name,department_name FROM employees INNER JOIN departments ON employees.department_id=departments.department_id;
 
-SELECT department_name,round(avg(salary)) as avr_salary from employees INNER JOIN departments on employees.employee_id=departments.department_id
+SELECT department_name,round(avg(salary)) as avr_salary from employees INNER JOIN departments USING(department_id )
 GROUP BY department_name ORDER BY avr_salary DESC LIMIT 1  ;
 
 

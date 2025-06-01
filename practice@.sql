@@ -21,4 +21,4 @@ INSERT INTO orders (customer_id, order_date, total_amount) VALUES
 SELECT customer_id,count(customer_id),sum(total_amount) as total_span FROM orders
 GROUP BY  customer_id HAVING count(customer_id)>2;
 
-SELECT extract(MONTH FROM order_date)as months,sum(total_amount) FROM orders GROUP BY Months;
+SELECT extract(MONTH FROM order_date)as months,sum(total_amount) FROM orders WHERE extract(YEAR FROM order_date)=2022 GROUP BY months;
